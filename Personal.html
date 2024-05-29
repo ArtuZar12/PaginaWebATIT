@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Politécnica de San Luis Potosí</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            width: 250px; /* Ajusta el ancho del menú */
+            position: absolute;
+            top: 60px;
+            left: 20px; /* Ajusta la posición del menú */
+            background-color: #444;
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        .menu a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+            border-top: 1px solid #555;
+        }
+
+        .menu a:first-child {
+            border-top: none;
+        }
+
+        .menu.show {
+            display: flex;
+            max-height: 500px; /* Ajusta según la cantidad de enlaces */
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                width: 100%;
+                left: 0;
+            }
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Icono de hamburguesa -->
+        </div>
+        <h1>Personal</h1>
+    </header>
+    <div class="menu" id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="carreras.html">Carreras</a>
+      <a href="Personal.html">Personal</a>
+      <a href="Residencias.html">Residencias</a>
+      <a href="Videos.html">Videos</a>
+      <a href="blog.html">Blog</a>
+      <a href="Galeria.html">Galería</a>
+      <a href="Ayuda.html">Ayuda</a>
+  </div>
+    <script src="hambur.js"></script>
+    <section>
+        <p>En la Academia contamos con excelentes docentes </p>
+    </section>
+    <section>
+        <h2>Docentes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aguilar Rodríguez Araceli Gabriela</td>
+                  </tr>
+                  <tr>
+                    <td>Alonso Álvarez María Alicia</td>
+                  </tr>
+                  <tr>
+                    <td>Alonso Ruiz Ma. De Jesús</td>
+                  </tr>
+                  <tr>
+                    <td>Arriaga Santos Carlos Adrián</td>
+                  </tr>
+                  <tr>
+                    <td>Banda Guzmán Víctor Miguel</td>
+                  </tr>
+                  <tr>
+                    <td>Bautista Bautista Italo Carlos Delfino</td>
+                  </tr>
+                  <tr>
+                    <td>Cabrera Salinas Dinorah</td>
+                  </tr>
+                  <tr>
+                    <td>Cerda Lugo Angel de Jesus</td>
+                  </tr>
+                  <tr>
+                    <td>Chávez Pérez Manuel</td>
+                  </tr>
+                  <tr>
+                    <td>De León Lomelí Luz Roxana</td>
+                  </tr>
+                  <tr>
+                    <td>Díaz Díaz Irwin Allen</td>
+                  </tr>
+                  <tr>
+                    <td>Flores Gutiérrez Claudia Patricia</td>
+                  </tr>
+                  <tr>
+                    <td>García Haro Guillermo</td>
+                  </tr>
+                  <tr>
+                    <td>González Salas Javier Salvador</td>
+                  </tr>
+                  <tr>
+                    <td>González Torres Jorge Isaac</td>
+                  </tr>
+                  <tr>
+                    <td>Grimaldo Martínez Ana Isabel</td>
+                  </tr>
+                  <tr>
+                    <td>Guerrero Castillo Israel</td>
+                  </tr>
+                  <tr>
+                    <td>Hernández Delgado Zaira Elizabeth</td>
+                  </tr>
+                  <tr>
+                    <td>Hernández Escobar Erika Nohemí</td>
+                  </tr>
+                  <tr>
+                    <td>Hernández Martínez Imelda Deyanira</td>
+                  </tr>
+                  <tr>
+                    <td>Herrera Herrera Roxana Georgina</td>
+                  </tr>
+                  <tr>
+                    <td>Islas González María De Guadalupe</td>
+                  </tr>
+                  <tr>
+                    <td>Jerónimo Moreno Yasser</td>
+                  </tr>
+                  <tr>
+                    <td>Ledesma Ramos Guadalupe</td>
+                  </tr>
+                  <tr>
+                    <td>Leija Martínez Nehemías</td>
+                  </tr>
+                  <tr>
+                    <td>López Quirino David Uriel</td>
+                  </tr>
+                  <tr>
+                    <td>Martínez Galla Baltazar</td>
+                  </tr>
+                  <tr>
+                    <td>Martínez Martínez Leopoldo José Alfredo</td>
+                  </tr>
+                  <tr>
+                    <td>Martínez Mendoza Víctor Gabriel</td>
+                  </tr>
+                  <tr>
+                    <td>Méndez Leal Jorge Martín</td>
+                  </tr>
+                  <tr>
+                    <td>Moncada González Héctor Raúl</td>
+                  </tr>
+                  <tr>
+                    <td>Montañez Medina Adolfo Antonio</td>
+                  </tr>
+                  <tr>
+                    <td>Morales Robles Fermín</td>
+                  </tr>
+                  <tr>
+                    <td>Niño Carrales Genaro</td>
+                  </tr>
+                  <tr>
+                    <td>Pérez Castillo Paulina Del Rosario</td>
+                  </tr>
+                  <tr>
+                    <td>Ramírez González María Guadalupe</td>
+                  </tr>
+                  <tr>
+                    <td>Ramírez López Marisol</td>
+                  </tr>
+                  <tr>
+                    <td>Reyes Alejandro</td>
+                  </tr>
+                  <tr>
+                    <td>Reyes Velázquez Eduardo Alberto</td>
+                  </tr>
+                  <tr>
+                    <td>Reyna López Catalina</td>
+                  </tr>
+                  <tr>
+                    <td>Robles Centeno Laura Virginia</td>
+                  </tr>
+                  <tr>
+                    <td>Ruiz Cigarrillo Oscar</td>
+                  </tr>
+                  <tr>
+                    <td>Sánchez Vásquez José Daniel</td>
+                  </tr>
+                  <tr>
+                    <td>Sandoval Ortiz Andrés</td>
+                  </tr>
+                  <tr>
+                    <td>Silva Rodríguez Genoveva Viridiana</td>
+                  </tr>
+                  <tr>
+                    <td>Tolentino Jiménez José Ramón</td>
+                  </tr>
+                  <tr>
+                    <td>Trejo Martínez Francisco Eduardo</td>
+                  </tr>
+                  <tr>
+                    <td>Vargas Olmos Cecilia</td>
+                  </tr>
+                  <tr>
+                    <td>Velázquez Durán Miguel De Jesús</td>
+                  </tr>
+                  <tr>
+                    <td>Zúñiga Hernández Erika Adriana</td>
+                  </tr>
+                
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h2>Líderes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Área</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cabrera Rico Juan Antonio</td>
+                    <td>Coordinador</td>
+                </tr>
+                <tr>
+                    <td>Cabrera Rico Juan Antonio</td>
+                    <td>Coordinador</td>
+                  </tr>
+                  <tr>
+                    <td>Fernández Mireles Víctor Manuel</td>
+                    <td>Videojuegos, RA, RV y mixta</td>
+                  </tr>
+                  <tr>
+                    <td>Gámez Zavala Liliana</td>
+                    <td>Cisco, Programación y Certificaciones especializadas, Certiport, Comptia, Openedg</td>
+                  </tr>
+                  <tr>
+                    <td>Llamas Contreras Rafael</td>
+                    <td>Unidad de Delitos Informáticos, Fortinet, Ecouncil</td>
+                  </tr>
+                  <tr>
+                    <td>Montaño Rivas Omar</td>
+                    <td>Residencias Profesionales, AWS</td>
+                  </tr>
+                  <tr>
+                    <td>Ordaz Salazar Francisco Cruz</td>
+                    <td>Industria 4.0, DEVOPS</td>
+                  </tr>
+                <!-- Otras filas de líderes -->
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>Derechos Reservados &copy; 2024 Universidad Politécnica de San Luis Potosí</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Politécnica de San Luis Potosí</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            width: 250px; /* Ajusta el ancho del menú */
+            position: absolute;
+            top: 60px;
+            left: 20px; /* Ajusta la posición del menú */
+            background-color: #444;
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        .menu a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+            border-top: 1px solid #555;
+        }
+
+        .menu a:first-child {
+            border-top: none;
+        }
+
+        .menu.show {
+            display: flex;
+            max-height: 500px; /* Ajusta según la cantidad de enlaces */
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #343a40;
+            margin: 0 10px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                width: 100%;
+                left: 0;
+            }
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Icono de hamburguesa -->
+        </div>
+        <h1>Contactos</h1>
+    </header>
+    <nav>
+        <a href="blog.html">Blog</a>
+        <a href="Indicadores.html">Contactos</a>
+        <a href="Interaccion.html">Cuestionario</a>
+        <a href="PED.html">Chat</a>
+
+    </nav>
+    <div class="menu" id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="carreras.html">Carreras</a>
+        <a href="Personal.html">Personal</a>
+        <a href="Residencias.html">Residencias</a>
+        <a href="Videos.html">Videos</a>
+        <a href="blog.html">Blog</a>
+        <a href="Galeria.html">Galería</a>
+        <a href="Ayuda.html">Ayuda</a>
+    </div>
+    <script src="hambur.js"></script>
+    <section>
+        <h1>Formulario de Contacto</h1>
+        <form action="mailto: 185050@upslp.edu.mx" method="post">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="subject">Asunto:</label>
+            <input type="text" id="subject" name="subject" required>
+            
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <footer>
+        <p>Derechos Reservados &copy; 2024 Universidad Politécnica de San Luis Potosí</p>
+    </footer>
+</body>
+</html>

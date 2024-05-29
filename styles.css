@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+}
+
+nav {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px;
+}
+nav a {
+    text-decoration: none;
+    color: #343a40;
+    margin: 0 10px;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    width: 250px; /* Ajusta el ancho del menú */
+    position: absolute;
+    top: 60px;
+    left: 20px; /* Ajusta la posición del menú */
+    background-color: #444;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.menu a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-align: center;
+    border-top: 1px solid #555;
+}
+
+.menu a:first-child {
+    border-top: none;
+}
+
+.menu.show {
+    display: flex;
+    max-height: 500px; /* Ajusta según la cantidad de enlaces */
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 100%;
+        left: 0;
+    }
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+#post-form {
+    margin-top: 20px;
+}
+
+#post-form input,
+#post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+#post-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#post-form button:hover {
+    background-color: #555;
+}
+
+.post {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.post h2 {
+    margin: 0 0 10px;
+}
+
+.post p {
+    margin: 0;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Icono de hamburguesa -->
+        </div>
+        <h1>Mi Blog</h1>
+    </header>
+    <nav>
+        <a href="blog.html">Blog</a>
+        <a href="Indicadores.html">Contactos</a>
+        <a href="Interaccion.html">Cuestionario</a>
+        <a href="PED.html">Chat</a>
+
+    </nav>
+    <div class="menu" id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="carreras.html">Carreras</a>
+        <a href="Personal.html">Personal</a>
+        <a href="Residencias.html">Residencias</a>
+        <a href="Videos.html">Videos</a>
+        <a href="blog.html">Blog</a>
+        <a href="Galeria.html">Galería</a>
+        <a href="Ayuda.html">Ayuda</a>
+    </div>
+    <script src="hambur.js"></script>
+    <div class="container">
+        <div id="blog-posts"></div>
+        <form id="post-form">
+            <input type="text" id="title" placeholder="Título" required>
+            <textarea id="content" placeholder="Contenido" required></textarea>
+            <button type="submit">Agregar Publicación</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    <br>
+    <footer>
+        <p>Derechos Reservados &copy; 2024 Universidad Politécnica de San Luis Potosí</p>
+    </footer>
+</body>
+</html>

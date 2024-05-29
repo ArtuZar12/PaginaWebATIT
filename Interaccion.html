@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Politécnica de San Luis Potosí</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            width: 250px; /* Ajusta el ancho del menú */
+            position: absolute;
+            top: 60px;
+            left: 20px; /* Ajusta la posición del menú */
+            background-color: #444;
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        .menu a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+            border-top: 1px solid #555;
+        }
+
+        .menu a:first-child {
+            border-top: none;
+        }
+
+        .menu.show {
+            display: flex;
+            max-height: 500px; /* Ajusta según la cantidad de enlaces */
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #343a40;
+            margin: 0 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                width: 100%;
+                left: 0;
+            }
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Icono de hamburguesa -->
+        </div>
+        <h1>Cuestionario</h1>
+    </header>
+    <div class="menu" id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="carreras.html">Carreras</a>
+        <a href="Personal.html">Personal</a>
+        <a href="Residencias.html">Residencias</a>
+        <a href="Videos.html">Videos</a>
+        <a href="blog.html">Blog</a>
+        <a href="Galeria.html">Galería</a>
+        <a href="Ayuda.html">Ayuda</a>
+    </div>
+    <nav>
+        <a href="blog.html">Blog</a>
+        <a href="Indicadores.html">Contactos</a>
+        <a href="Interaccion.html">Cuestionario</a>
+        <a href="PED.html">Chat</a>
+
+    </nav>
+    <script src="hambur.js"></script>
+    <section>
+        <h1>Cuestionario sobre la Academia de Tecnologías de la Información y Telemática</h1>
+    <form id="cuestionario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        
+        <label>¿Cuál carrera estás estudiando?</label><br>
+        <input type="radio" id="iti" name="carrera" value="ITI">
+        <label for="iti">Ingeniería en Tecnologías de la Información</label><br>
+        <input type="radio" id="item" name="carrera" value="ITEM">
+        <label for="item">Ingeniería en Telemática</label><br><br>
+        
+        <label for="infraestructura">¿Qué infraestructura usas más frecuentemente?</label><br>
+        <select id="infraestructura" name="infraestructura">
+            <option value="redes">Laboratorio de Redes</option>
+            <option value="telecom">Laboratorio de Telecomunicaciones</option>
+            <option value="sun">Laboratorio de Tecnologías SUN</option>
+            <option value="software">Centro de Software Libre</option>
+        </select><br><br>
+        
+        <label>¿Cuáles certificaciones te interesan? (Selecciona todas las que apliquen)</label><br>
+        <input type="checkbox" id="adobe" name="certificaciones" value="Adobe">
+        <label for="adobe">Adobe</label><br>
+        <input type="checkbox" id="oracle" name="certificaciones" value="Oracle">
+        <label for="oracle">Oracle</label><br>
+        <input type="checkbox" id="cisco" name="certificaciones" value="Cisco">
+        <label for="cisco">Cisco</label><br>
+        <input type="checkbox" id="unity" name="certificaciones" value="Unity">
+        <label for="unity">Unity</label><br><br>
+        
+        <button type="button" onclick="generarPDF()">Generar PDF</button>
+    </form>
+    <h2>Tu PDF generado</h2>
+    <iframe id="pdfIframe" width="100%" height="500px"></iframe>
+    </section>
+    <script>
+        async function generarPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const nombre = document.getElementById('nombre').value;
+            const carrera = document.querySelector('input[name="carrera"]:checked').value;
+            const infraestructura = document.getElementById('infraestructura').value;
+            const certificaciones = Array.from(document.querySelectorAll('input[name="certificaciones"]:checked')).map(el => el.value).join(', ');
+
+            doc.text(`Nombre: ${nombre}`, 10, 10);
+            doc.text(`Carrera: ${carrera}`, 10, 20);
+            doc.text(`Infraestructura más utilizada: ${infraestructura}`, 10, 30);
+            doc.text(`Certificaciones de interés: ${certificaciones}`, 10, 40);
+
+            const pdfBlob = doc.output('blob');
+            const pdfUrl = URL.createObjectURL(pdfBlob);
+
+            document.getElementById('pdfIframe').src = pdfUrl;
+        }
+    </script>
+    <footer>
+        <p>Derechos Reservados &copy; 2024 Universidad Politécnica de San Luis Potosí</p>
+    </footer>
+</body>
+</html>

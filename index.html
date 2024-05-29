@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Politécnica de San Luis Potosí</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            width: 250px; /* Ajusta el ancho del menú */
+            position: absolute;
+            top: 60px;
+            left: 20px; /* Ajusta la posición del menú */
+            background-color: #444;
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        .menu a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+            border-top: 1px solid #555;
+        }
+
+        .menu a:first-child {
+            border-top: none;
+        }
+
+        .menu.show {
+            display: flex;
+            max-height: 500px; /* Ajusta según la cantidad de enlaces */
+        }
+
+        .float-right {
+            float: right;
+            margin: 0 0 10px 20px;
+            max-width: 300px; /* Ajusta el tamaño de la imagen según sea necesario */
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                width: 100%;
+                left: 0;
+            }
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+            text-align: justify;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Icono de hamburguesa -->
+        </div>
+        <h1>Academia de Tecnologías de la Información y Telemática</h1>
+    </header>
+    <div class="menu" id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="carreras.html">Carreras</a>
+        <a href="Personal.html">Personal</a>
+        <a href="Residencias.html">Residencias</a>
+        <a href="Videos.html">Videos</a>
+        <a href="blog.html">Blog</a>
+        <a href="Galeria.html">Galería</a>
+        <a href="Ayuda.html">Ayuda</a>
+    </div>
+    <script src="hambur.js"></script>
+    <section id="inicio">
+        <h2>Que es la Academia de Tecnologias de la Información y Telemática</h2>
+        <img src="img/atit.jpg" alt="Academia" class="float-right">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec urna sed nisi tempus ultricies at quis 
+            purus. In sodales volutpat est, facilisis tempor eros venenatis eget. In molestie tortor ac nunc consectetur, 
+            nec commodo purus sagittis. Nulla eu ex id nisi imperdiet laoreet at in turpis. Nullam maximus odio a 
+            bibendum congue. Curabitur eu hendrerit diam. Curabitur et volutpat orci, id pulvinar purus. 
+            Suspendisse nibh nisi, accumsan id tortor eget, luctus dictum mi. Proin ultrices arcu eu tortor tempor 
+            lobortis. Donec ultricies, augue ut finibus mattis, odio nisl tincidunt risus, non pellentesque ipsum mi 
+            et erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent ut lorem quis sapien 
+            imperdiet fringilla. Ut facilisis interdum ante, at porta lorem tincidunt sed. Vestibulum elementum elit 
+            at ante euismod euismod.
+        </p>
+        <p>
+            Integer blandit bibendum massa. Sed semper leo in est mattis, et facilisis augue dapibus. Etiam id est 
+            bibendum, sagittis velit eu, dictum quam. Donec vulputate convallis convallis. Nam tincidunt, risus et 
+            tincidunt ullamcorper, erat sem tincidunt arcu, quis mattis mi dui eu nisi. Suspendisse convallis nibh 
+            sit amet risus mollis, at tristique ex porttitor. Nunc vulputate sit amet dolor sit amet consectetur. 
+            Duis malesuada felis eros, eget semper justo accumsan nec. Proin eu mi porttitor, dictum lectus non, 
+            luctus ex. In nec egestas magna. Mauris ac orci placerat, tincidunt ipsum sed, aliquet nulla. Sed mattis 
+            malesuada ipsum, vitae porttitor dui mollis in. Nunc pulvinar massa eget velit sagittis, vel accumsan 
+            justo interdum.
+        </p>
+    </section>
+    <section >
+        <h2>Inicio e Historia</h2>
+        <img src="img/CNT.jpg" alt="Academia" class="float-right">
+        <p>Ut eget risus vel turpis interdum condimentum eget nec diam. In quis sem ut ligula imperdiet dignissim. 
+            Donec rhoncus cursus urna vel dignissim. Aliquam eget pretium enim, quis convallis velit. Pellentesque 
+            habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut at ex nec tortor commodo 
+            bibendum a sit amet magna. Integer feugiat magna et neque blandit placerat. Morbi rutrum velit ac tortor 
+            tincidunt, eu consequat leo accumsan. Ut laoreet diam at rhoncus dignissim. Morbi egestas magna a felis 
+            pulvinar, vel molestie neque placerat. Curabitur eu sodales mauris, et viverra leo. Suspendisse malesuada 
+            vehicula vehicula. Quisque sit amet purus justo. Sed eleifend est consectetur purus pretium, sit amet 
+            efficitur ipsum dictum.
+        </p>
+        <p>
+            Quisque accumsan mattis orci sed tincidunt. Vestibulum porttitor mauris nec aliquet volutpat. Mauris id 
+            tellus ac ligula vulputate suscipit. Quisque sed tincidunt diam. Fusce euismod elit dapibus dolor posuere 
+            imperdiet. Mauris pulvinar tortor non justo bibendum auctor. Duis ut metus non mauris accumsan facilisis 
+            eget et nisl. Nulla eu dui venenatis, fermentum quam eu, iaculis ipsum. Donec dictum porttitor ipsum, in 
+            sagittis enim dictum id.
+        </p>
+        <p>
+            Suspendisse potenti. Integer posuere augue nec est ullamcorper, ac egestas felis fringilla. Nullam auctor 
+            dapibus odio ut efficitur. Etiam dapibus tincidunt elit. Pellentesque eget sagittis ligula. Etiam vitae 
+            ligula ut nibh feugiat auctor. Ut rutrum sem eget ante feugiat, in congue diam sagittis. Curabitur volutpat 
+            gravida erat, iaculis vestibulum erat posuere eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Fusce magna ante, posuere sit amet cursus sed, bibendum ac ex. Fusce sodales, ex id rutrum sodales, sem 
+            lorem laoreet arcu, at varius est orci id orci. Integer tincidunt auctor magna ut ultricies. Nunc 
+            elementum nulla et ex laoreet, ac bibendum felis dictum. Donec quis congue neque.
+        </p>
+    </section>
+    <footer>
+        <p>Derechos Reservados &copy; 2024 Universidad Politécnica de San Luis Potosí</p>
+    </footer>
+</body>
+</html>
+
+

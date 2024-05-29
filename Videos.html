@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Politécnica de San Luis Potosí</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            z-index: 999; 
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            z-index: 1000; 
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            width: 250px; 
+            position: absolute;
+            top: 60px;
+            left: 20px; 
+            background-color: #444;
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+            max-height: 0;
+            z-index: 1000;
+        }
+
+        .menu a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+            border-top: 1px solid #555;
+        }
+
+        .menu a:first-child {
+            border-top: none;
+        }
+
+        .menu.show {
+            display: flex;
+            max-height: 500px; 
+        }
+
+        #videos {
+            padding: 20px;
+            position: relative; 
+            z-index: 1; 
+        }
+
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                width: 100%;
+                left: 0;
+            }
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Icono de hamburguesa -->
+        </div>
+        <h1>Videos</h1>
+    </header>
+    <div class="menu" id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="carreras.html">Carreras</a>
+        <a href="Personal.html">Personal</a>
+        <a href="Residencias.html">Residencias</a>
+        <a href="Videos.html">Videos</a>
+        <a href="blog.html">Blog</a>
+        <a href="Galeria.html">Galería</a>
+        <a href="Ayuda.html">Ayuda</a>
+    </div>
+    <script src="hambur.js"></script>
+    <section id="videos">
+        <div class="video-container">
+            <video controls>
+                <source src="videos/Ingeniería en Tecnologías de la Información (ITI).mp4" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="videos/Ingeniería en Telemática (ITEM).mp4" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="videos/videoplayback.mp4" type="video/mp4">
+            </video>
+        </div>
+        <br>
+        <div class="video-container">
+            <video controls>
+                <source src="videos/Experiencias ITEM.mp4" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="videos/Experiencias ITI.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+    <footer>
+        <p>Derechos Reservados &copy; 2024 Universidad Politécnica de San Luis Potosí</p>
+    </footer>
+</body>
+</html>
+

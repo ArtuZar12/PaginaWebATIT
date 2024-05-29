@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Politécnica de San Luis Potosí</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 10px;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            width: 250px;
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background-color: #444;
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        .menu a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+            border-top: 1px solid #555;
+        }
+
+        .menu a:first-child {
+            border-top: none;
+        }
+
+        .menu.show {
+            display: flex;
+            max-height: 500px;
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #343a40;
+            margin: 0 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .float-right {
+            float: right;
+            margin: 0 0 10px 20px;
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .image-gallery img {
+            max-width: 150px;
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            background-color: #f9f9f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #bbbbbb;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                width: 100%;
+                left: 0;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .float-right {
+                float: none;
+                margin: 0 auto 10px auto;
+            }
+
+            .image-gallery img {
+                max-width: 100px;
+            }
+        }
+
+        section {
+            padding: 50px;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Icono de hamburguesa -->
+        </div>
+        <h1>Carreras</h1>
+    </header>
+    <nav>
+        <a href="ITI.html">ITI</a>
+        <a href="ITEM.html">ITEM</a>
+        <a href="carreras.html">Carreras</a>
+    </nav>
+    <div class="menu" id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="carreras.html">Carreras</a>
+        <a href="Personal.html">Personal</a>
+        <a href="Residencias.html">Residencias</a>
+        <a href="Videos.html">Videos</a>
+        <a href="blog.html">Blog</a>
+        <a href="Galeria.html">Galería</a>
+        <a href="Ayuda.html">Ayuda</a>
+    </div>
+    <script>
+        document.getElementById('menu-icon').onclick = function() {
+            var menu = document.getElementById('menu');
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show');
+            } else {
+                menu.classList.add('show');
+            }
+        }
+    </script>
+    <section>
+        <img src="img/UPSLP.jpg" alt="Universidad" class="float-right">
+        <p>Actualmente la Academia está conformada por dos Carreras: 
+            <ul>
+                <li>Ingeniería en Tecnologías de la Información (ITI)</li>
+                <li>Ingeniería en Telemática (ITEM)</li>
+            </ul>
+            Las cuales se encuentran dentro de las instalaciones de la Universidad Politécnica de San Luis Potosí ubicada en C. Urbano Villalón 500, La Ladrillera, 78369 San Luis Potosí, S.L.P.
+        </p>
+    </section>
+    <section>
+        <h2>Infraestructura / Recursos</h2>
+        <p>Los estudiantes de la Academia de Tecnologías de la Información y Telemática cuentan con acceso a la siguiente infraestructura:</p>
+        <p>Edificio del Centro de Nuevas Tecnologías</p>
+        <ul>
+            <li>Laboratorio de Redes (CCNA-Cisco)</li>
+            <li>Laboratorio de Telecomunicaciones</li>
+            <li>Laboratorio de Tecnologías SUN</li>
+            <li>Centro de Software Libre</li>
+            <li>Laboratorio de Cableado Estructurado</li>
+            <li>Laboratorio de Arquitectura de Computadoras</li>
+            <li>Laboratorios especializados: Ingeniería de Software, Seguridad Informática, Comercio, Electrónico, Procesamiento Digital
+                Software: Maple, Matlab, Interactive Physics, IBM Rational Rose, Oracle, Cisco Packet Tracer, Microsoft Campus Agreement, Software para el aprendizaje del Inglés, Solaris, Java, entre otros</li>
+            <li>Servicios Informáticos: Internet, Internet 2, Videoconferencia, Almacenamiento Digital, Plataforma de e-learning (Blackboard), VoIP.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Certificaciones</h2>
+        <p>El PE de Ingeniería en Tecnologías de la Información promueve entre sus estudiantes diferentes certificaciones asociadas al ejercicio de esta profesión, entre las que destacan las siguientes: 
+        </p>
+        <div class="container">
+            <div class="image-gallery">
+                <img src="img/Adobe.png" alt="Adobe">
+                <img src="img/Certi.png" alt="Certi">
+                <img src="img/MOS.jpg" alt="MOS">
+                <img src="img/MTA.jpg" alt="MTA">
+                <img src="img/Oracle.jpg" alt="Oracle">
+                <img src="img/Cisco.png" alt="Cisco">
+                <img src="img/pearson.png" alt="Pearson">
+            </div>
+            <div class="certifications">
+                <h3>Certificaciones de la Academia MOS</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Programa/Año</th>
+                            <th>2014</th>
+                            <th>2015</th>
+                            <th>2016</th>
+                            <th>2017</th>
+                            <th>2018</th>
+                            <th>2019</th>
+                            <th>2020</th>
+                            <th>2021</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Word</td>
+                            <td>103</td>
+                            <td>87</td>
+                            <td>121</td>
+                            <td>124</td>
+                            <td>128</td>
+                            <td>134</td>
+                            <td>136</td>
+                            <td>138</td>
+                        </tr>
+                        <tr>
+                            <td>PowerPoint</td>
+                            <td>104</td>
+                            <td>95</td>
+                            <td>124</td>
+                            <td>125</td>
+                            <td>125</td>
+                            <td>126</td>
+                            <td>137</td>
+                            <td>138</td>
+                        </tr>
+                        <tr>
+                            <td>Excel</td>
+                            <td>102</td>
+                            <td>81</td>
+                            <td>111</td>
+                            <td>126</td>
+                            <td>120</td>
+                            <td>121</td>
+                            <td>137</td>
+                            <td>133</td>
+                        </tr>
+                        <tr>
+                            <td>Excel Expert</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>-</td>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Access</td>
+                            <td>-</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>DreamWeaver</td>
+                            <td>80</td>
+                            <td>93</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Total anual</td>
+                            <td>389</td>
+                            <td>357</td>
+                            <td>356</td>
+                            <td>379</td>
+                            <td>373</td>
+                            <td>385</td>
+                            <td>414</td>
+                            <td>417</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Certificaciones UNITY</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Periodo</th>
+                            <th>Unity Programmer</th>
+                            <th>Unity VR Developer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2019</td>
+                            <td>35</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td>28</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>2021</td>
+                            <td>20</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>2022</td>
+                            <td>40</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td>25</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>123</td>
+                            <td>52</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Certificaciones especializadas</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Certificación ITI</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CONNECTED DEVICES</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>HP ATA CONNECTED DEVICES</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>HP ATA NETWORKS</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>CCENT 1</td>
+                            <td>31</td>
+                        </tr>
+                        <tr>
+                            <td>CCNA</td>
+                            <td>33</td>
+                        </tr>
+                        <tr>
+                            <td>CCENT 2</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td>COMPTIA STRATA</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>COMPTIA A+</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>COMPTIA A+ COMPOSITE</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>98-349:MTA: Windows® Operating System Fundamentals</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td>98-361: MTA: Software Development Fundamentals (C#)</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td>98-361: MTA: Software Development Fundamentals (VB)</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>98-364: MTA: Database Fundamentals</td>
+                            <td>190</td>
+                        </tr>
+                        <tr>
+                            <td>98-365:MTA: Windows® Server Administration Fundamentals</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>98-366: MTA: Networking Fundamentals</td>
+                            <td>90</td>
+                        </tr>
+                        <tr>
+                            <td>98-367: MTA: Security Fundamentals</td>
+                            <td>66</td>
+                        </tr>
+                        <tr>
+                            <td>98-375:MTA: HTML5 Application Development Fundamentals</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>98-382:MTA: Introduction to Programming using JavaScript</td>
+                            <td>55</td>
+                        </tr>
+                        <tr>
+                            <td>98-383:MTA: Introduction to Programming using HTML and CSS</td>
+                            <td>214</td>
+                        </tr>
+                        <tr>
+                            <td>98-388:MTA: Introduction to Programming using Java</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>98-381:MTA: Introduction to Programming using Python</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>ITS Cybersecurity</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>ITS Databases</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>ITS HTML and CSS</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>ITS Java</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>ITS JavaScript</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>ITS Network Security</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>ITS Networking</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>ITS Python</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TOTALES</strong></td>
+                            <td><strong>1177</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Distribuidas por Academias</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Certificación ITI</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HP</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>CISCO</td>
+                            <td>92</td>
+                        </tr>
+                        <tr>
+                            <td>COMPTIA</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td>MTA</td>
+                            <td>798</td>
+                        </tr>
+                        <tr>
+                            <td>ITS</td>
+                            <td>196</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TOTALES</strong></td>
+                            <td><strong>1177</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <h2>Logros/Distinciones</h2>
+    <div class="container">
+        <div class="achievements-list">
+            <ul>
+                <li>Mejor Academia a nivel Latinoamérica que promueve la certificación, el programa Cisco Networking Academy Program y que forma nuevos estudiantes en el área de TI</li>
+                <li>3 medallas a estudiantes ejemplares otorgadas por la asociación Trayectoria de Éxito.</li>
+                <li>1er, 6º, 5º lugar concurso Netriders México, 2009, 2011 y 2013.</li>
+                <li>1er lugar expo ciencias otorgada por la Red Nacional de Actividades Juveniles en Ciencia y Tecnología, 2012 y 2013.</li>
+                <li>5º y 6º lugar en el Torneo Mexicano de Robótica, 2016.</li>
+                <li>150+ Certificaciones CCNA y CCENT como Academia CCNA</li>
+                <li>480+ Certificaciones JAVA y Solaris como Academia Oracle.</li>
+                <li>Proyecto Azios: Leyendas Potosinas (2018-2019): Estudiantes del noveno semestre de los Programas Educativos de Ingeniería en Tecnologías de la Información (ITI), Ingeniería en Telemática (ITEM) y Licenciatura en Mercadotecnia Internacional (LMI), de la Universidad Politécnica de San Luis Potosí (UPSLP), y liderados por el profesor Víctor Manuel Fernández Mireles, desarrollaron un videojuego utilizando realidad virtual en el que se adaptan algunas leyendas potosinas. En la implementación del videojuego se adaptó la leyenda “La bruja huachichil del Barrio de Tlaxcala”. En este videojuego, se rescatan algunas leyendas potosinas y elementos históricos del viejo San Luis de forma innovadora utilizando realidad virtual. Este trabajo se presentó en el Concurso Nacional de Videojuegos MX en la categoría “Universitarios” en la cual se recibieron 264 proyectos de los cuales ocho obtuvieron algún reconocimiento. El videojuego presentado por la Universidad recibió el premio al “Mejor Juego Cultural-Educativo”.</li>
+                <li>Proyecto XTOR (2015-2019): Estudiantes del PE liderados por el profesor Rafael Llamas Contreras a través del grupo de trabajo de Cyberseguridad y en colaboración con la Secretaría de Seguridad Pública del Estado de San Luis Potosí, desarrollaron una aplicación llamada XTOR. Esta aplicación bloquea las llamadas entrantes al celular si es que coincide con algún número que fue reportado como un número del que se han hecho llamadas para extorsionar. La base de datos en la que se consultan los números reportados se actualiza de manera regular por la Secretaría de Seguridad Pública del Estado de San Luis Potosí. Esta aplicación se desarrolló para el sistema operativo Android y actualmente se encuentra disponible de forma gratuita desde “Play Store”.</li>
+                <li>Proyecto GIGI (2017): Como parte de las actividades de divulgación de la ciencia en la institución, estudiantes del PE crearon un robot utilizando diversos objetos de uso cotidiano. Dada la temática de la Semana de la Ciencia en la que se participó, el robot reproducía frases orientadas al cuidado del agua. Este robot fue bautizado bajo el nombre de GIGI y se presentó en la Semana de la Ciencia. El objetivo fue mostrar a los niños lo que pueden ser capaces de hacer en carreras del área de las ingenierías, así mismo, como se puede contribuir a mantener la naturaleza. Este robot en su primera versión fue programado para compartir frases simples y después a través de reconocimiento enseñar a los niños.</li>
+                <li>Club de Robótica: El Club de Robótica está conformado por alumnos que tienen el gusto por la programación y la robótica. Ya han sido varias las generaciones que han participado en este club, dedicando horas extras e independientes a sus materias y laboratorios para la construcción de sus robots y para participar en la competencia de cierre. Los miembros de este club pertenecen principalmente a estudiantes de los primeros semestres, quienes son liderados por compañeros estudiantes de semestres más avanzados. Este tipo de actividades fortalece las habilidades de compañerismo, competencia, investigación, autoaprendizaje, pero sobre todo el saber que aún se tiene un gran camino por recorrer como estudiantes del PE de ITI, y sobre todo se preparan para competencias más avanzadas, como el Torneo Mexicano de Robótica, quienes participan en este torneo son los mejores de cada una de las competencias de cierre y participan cada año.</li>
+                <li>Proyecto ADA: Como una iniciativa gubernamental, la Institución, en conjunto con la Academia y estudiantes y egresadas mujeres de la carrera de ITI, buscan fortalecer el gusto por las profesiones en ingeniería a estudiantes que actualmente se encuentran en formación en las secundarias del estado, participan con la impartición de pláticas y talleres de manera gratuita fortaleciendo el futuro de las profesiones en el país.</li>
+                <li>Proyecto Semana de la Ciencia: PEPA PIG (2017): Juego de Realidad Virtual y Realidad Aumentada, creado con la intención de divulgar la ciencia motivando a los estudiantes visitantes dentro del rango de edades de 5 a 10 años a buscar el cuidado del agua. Este juego fue desarrollado por estudiantes del programa Educativo de ITI.</li>
+                <li>2013, Reconocimiento por haber concluido al menos 12 años en el programa Cisco Networking Academy Program.</li>
+                <li>Única Universidad a nivel nacional que mantiene los roles de Centro Docente, Centro de Soporte y Centro de Entrenamiento para la región centro de México; única Universidad a nivel Latinoamérica participando en el programa Girls Power Tech, Acceleration Program dentro del programa Cisco Networking Academy Program.</li>
+            </ul>
+        </div>
+        <div class="image-gallery">
+            <img src="img/l1.png" alt="Logros">
+            <img src="img/l2.png" alt="Logros">
+            <img src="img/l3.png" alt="Logros">
+        </div>
+    </div>
+</section>
+<section>
+    <h1>Eventos y Concursos</h1>
+    <h2>CONCURSOS INTERNOS:</h2>
+    <ul>
+        <li>Concurso de Robótica, en los años 2018, 2019, 2022; todos al cierre del año en el mes de diciembre y como parte del cierre de actividades del Club de Robótica.</li>
+        <li>Concurso de Programación en los años 2020, 2021 y 2022, en el marco del Foro Nacional de Tecnologías de la Información y del día del programador.</li>
+    </ul>
+
+    <h2>CONCURSOS NACIONALES:</h2>
+    <ul>
+        <li>Torneo Mexicano de Robótica ediciones 2018 y 2019; en los semestres de Primavera.</li>
+        <li>Capture the Flag HackMex 2019, 2022</li>
+    </ul>
+
+    <h2>CONCURSOS ESTATALES:</h2>
+    <ul>
+        <li>Medalla de Estudiantes Ejemplares, cada año desde el 2018 en el cierre del semestre Primavera.</li>
+        <li>Semana de la Ciencia (cada año desde 2018 en el mes de octubre)</li>
+    </ul>
+
+    <h2>CICLOS DE CONFERENCIAS, ENTREGA DE RECONOCIMIENTOS Y CONGRESOS:</h2>
+    <ul>
+        <li>Foro de Tecnologías en coordinación con la empresa Capa3 y el Departamento de Servicios Informáticos (2019, 2020, 2021, 2022 en los meses de septiembre y octubre)</li>
+        <li>Foro ITI Anual (2019, 2020, 2021, 2022)</li>
+        <li>Entrega Anual de Certificaciones Oracle, Unity, CISCO, MTA, ITS</li>
+        <li>Cisco Academy Summit (2019,2020,2021, 2022, 2023)</li>
+        <li>Cisco Network Instructor Day (2019, 2020, 2021, 2022, 2023)</li>
+    </ul>
+
+    <h2>INTEGRACIÓN Y RECONOCIMIENTOS:</h2>
+    <ul>
+        <li>Curso de Inducción (Cada año en el mes de Agosto desde 2019 a 2023), excepto los años impactados por la pandemia</li>
+        <li>Club de Robótica (Cada año desde el 2019 en el semestre de Otoño), excepto los años impactados por la pandemia.</li>
+        <li>Unidad de delitos Informáticos (Cada año desde 2015, en ambos semestres), excepto los años impactados por la pandemia.</li>
+        <li>Feria De Carreras, Visitas, Cursos y Exposiciones (Cada año de 2015 a 2022), excepto los años impactados por la pandemia.</li>
+        <li>Visitas Industriales Empresas (Una vez por semestre de 2019, a 2023, UPQ, Honeywell, Cerro de Caballos, IPICYT, BMW) , excepto los años impactados por la pandemia.</li>
+        <li>Taller de Preegreso (cada año en el semestre de Otoño de 2018 a 2023), excepto los años impactados por la pandemia.</li>
+        <li>32 Participantes en el evento Medalla a Estudiantes Ejemplares, de los cuáles se obtuvieron 3 Medallas de Estudiantes Ejemplares por parte de la Fundación Trayectoria de Éxito y 9 estudiantes han logrado la patente de reconocimiento.</li>
+    </ul>
+</section>
+<section>
+    <h2>Campo de trabajo:</h2>
+    <p>Un Ingeniero en Tecnologías de la Información tiene la posibilidad de desarrollarse en industrias dedicadas tanto a la transformación como a los servicios, siempre buscando la mejora. Por lo anterior puede contratarse en:</p>
+    <div class="container">
+        <div class="lists">
+            <div class="companies">
+                <h3>Empresas de diversos sectores productivos como:</h3>
+                <ul>
+                    <li>Tv Azteca D.F Ajusco</li>
+                    <li>Tyssenkrupp Mexinox</li>
+                    <li>Create IT</li>
+                    <li>Swarm Insights</li>
+                    <li>Seiton Gestión de Documentos SA de CV</li>
+                    <li>Infosys</li>
+                    <li>Triara</li>
+                    <li>Mexichem</li>
+                    <li>Aromáticos La Victoria</li>
+                    <li>Internacional de Sistemas de Imagen, León Gto.</li>
+                    <li>Estratel</li>
+                    <li>TECH ENERGY & GROUNDING MX S.A. DE C.V.</li>
+                    <li>CFE</li>
+                    <li>Universidad Autónoma de San Luis Potosí</li>
+                    <li>Draexlmaier Automotive</li>
+                    <li>SMARTbt SA DE CV</li>
+                    <li>Servicios de Salud de San Luis Potosí</li>
+                    <li>ABB</li>
+                    <li>Softtek</li>
+                    <li>CONALEP</li>
+                    <li>CISTEL</li>
+                    <li>SEGE</li>
+                </ul>
+            </div>
+            <div class="positions">
+                <h3>En puestos como:</h3>
+                <ul>
+                    <li>Soporte Técnico</li>
+                    <li>Desarrollador de Programa de Software</li>
+                    <li>Administrador de Bases de Datos</li>
+                    <li>Administrador de Proyectos TI</li>
+                    <li>Mantenimiento y Operación de Redes</li>
+                    <li>Gerencia o Administración de Sistemas</li>
+                    <li>Administrador de Servidores</li>
+                    <li>Webmaster o Diseño Web</li>
+                    <li>Telecomunicaciones y Sistemas Móviles</li>
+                </ul>
+            </div>
+            <div class="areas">
+                <h3>En áreas relativas a:</h3>
+                <ul>
+                    <li>Industria Manufacturera</li>
+                    <li>Automotriz</li>
+                    <li>Electrodomésticos</li>
+                    <li>Agroindustria</li>
+                    <li>Alimentos y Bebidas</li>
+                    <li>Hoteles y Restaurantes</li>
+                    <li>Hospitales</li>
+                    <li>Instituciones Educativas</li>
+                    <li>Autoservicios</li>
+                    <li>Gobierno</li>
+                    <li>Construcción</li>
+                    <li>Mensajerías</li>
+                    <li>Consultoría</li>
+                </ul>
+            </div>
+        </div>
+    </div>        
+</section>
+<footer>
+    <p>Derechos Reservados &copy; 2024 Universidad Politécnica de San Luis Potosí</p>
+</footer>
+</body>
+</html>
