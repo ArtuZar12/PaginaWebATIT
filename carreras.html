@@ -204,6 +204,18 @@
             </ul>
             Las cuales se encuentran dentro de las instalaciones de la Universidad Politécnica de San Luis Potosí ubicada en C. Urbano Villalón 500, La Ladrillera, 78369 San Luis Potosí, S.L.P.
         </p>
+        <div id="map" style="width:400px;height:400px;background:yellow"></div>
+        <script>
+        function myMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(22.1162471, -100.9920162),
+            zoom: 21,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        }
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
     </section>
     <section>
         <h2>Infraestructura / Recursos</h2>
