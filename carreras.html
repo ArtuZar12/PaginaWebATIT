@@ -27,6 +27,7 @@
             position: absolute;
             top: 15px;
             left: 20px;
+            z-index: 1; /* Añade un índice z para asegurarte de que el menú esté por encima del mapa */
         }
 
         .menu {
@@ -40,6 +41,7 @@
             transition: max-height 0.3s ease-out;
             overflow: hidden;
             max-height: 0;
+            z-index: 2; /* Añade un índice z para asegurarte de que el menú esté por encima del mapa */
         }
 
         .menu a {
